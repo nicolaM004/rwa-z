@@ -1,0 +1,72 @@
+Pristup resursima
+
+a)Pokreće li vaš preglednik HTTP verziju 1.0 ili 1.1? 
+  Preglednik koristi HTTP verziju 1.1
+        
+b)Koja je verzija HTTP-a poslužitelja pokrenuta kad pristupite npr sa sum.ba?
+  Posluzitelj koristi HTTP verziju 1.1
+ 
+c)Koje jezike (ako postoje) vaš preglednik pokazuje da može prihvatiti na poslužitelju?
+  Pokazuje: en-US,en;q=0.9
+  Ovo smo vidjeli u Request Headers pod sekcijom Accept-Languages
+
+
+d)Koja je IP adresa vašeg računala? A koja je IP adresa sum.ba?
+ IP adresa mog racunala:172.14.3.199, vidjeli smo preko ipconfig-a u cmd-u
+ IP adresa sum.ba:212.39.111.33, koristili smo ping sum.ba da vidimo IP adresu
+
+e)Kada je HTML datoteka koju dohvaćate zadnji put modificirana na poslužitelju?
+  Thu, 03 Dec 1992 08:37:20 GMT
+  Ovaj podatak smo vidjeli u Response Headers pod nazivom Last-Modified
+
+f)Koliko se bajtova sadržaja vraća u vaš preglednik?
+  Content-Length: 2217
+  Ovaj podatak smo vidjeli preko komande u cmd-u koja je koristena i navedena u odgovoru pod g)
+
+g)Koji softver/web poslužitelj  poslužje web stranicu na server,navedite odakle vidite?
+  Posluzuje Apache, to smo vidjeli preko ove komande u cmd-u:curl -I | http://info.cern.ch/hypertext/WWW/TheProject.html 
+
+h)Koje jezike vaš web preglednik može prihvatiti?
+  Pokazuje: en-US,en;q=0.9
+-------------------------------------------------------------------------------------------------------------------------
+Pristup razlicitim resursima
+
+Resurs 1
+HTTP/1.1 200 OK
+Date: Wed, 23 Apr 2025 12:10:51 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Cache-Control: no-cache, private
+Content-Type: application/pdf
+a) MIME tip: application/pdf (PDF dokument)
+b) Velicina: /
+c) HTTP verzija posluzitelja: HTTP/1.1
+
+Resurs 2
+HTTP/1.1 200 OK
+Server: nginx/1.14.0 (Ubuntu)
+Date: Wed, 23 Apr 2025 12:12:29 GMT
+Content-Type: image/png
+Content-Length: 15684
+Connection: keep-alive
+Set-Cookie: MoodleSession=b4a5fpfjchpfe2b2jp8508c470; path=/moodle/; secure
+Cache-Control: no-store, no-cache, must-revalidate
+Content-Disposition: inline; filename="Logo sumarum.png"
+Last-Modified: Wed, 23 Apr 2025 12:12:29 GMT
+Expires: Wed, 23 Apr 2025 12:12:31 GMT
+Pragma:
+Accept-Ranges: none
+a) MIME tip: image/png
+b) Velicina: 15684
+c) HTTP verzija: HTTP/2
+
+Resurs 3
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 23 Apr 2025 12:13:26 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 1946
+Connection: keep-alive
+Vary: Accept-Encoding
+a) MIME tip: text/plain (tekstualna datoteka)
+b) Velicina: 1946
+c) HTTP verzija: HTTP/1.1
